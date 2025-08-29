@@ -1,42 +1,38 @@
-Ce document permet de suivre la découverte de Docker.
+# 🐳 Docker Cheat Sheet
 
-Termes Important : 
-- Registre (Registry) : Stockage de multiples Images
-- Image : Image statique et persistée d'un conteneur
-- Conteneur (container) : Instance d'une image en cours d'éxécution
+## 🔑 Termes importants
+- **Registre (Registry)** : Stockage de multiples Images
+- **Image** : Image statique et persistée d'un conteneur
+- **Conteneur (Container)** : Instance d'une image en cours d'exécution
 
-Hub Docker : 
-Site permettant d'installer des systèmes / Des extensions : [Docker](https://hub.docker.com)
+## 🌐 Hub Docker
+[Docker Hub](https://hub.docker.com) : Site permettant d'installer des systèmes / extensions
 
-Structure de Docker: 
-Serveur -> Système d'exploitation -> Moteur Docker -> Applications + Librairie (Conteneur)
+## ⚙️ Structure de Docker
+Serveur → Système d'exploitation → Moteur Docker → Applications + Librairies (Conteneurs)
 
-Commande de base docker : 
+## 📋 Commandes de base
 
-```docker ps``` ou ```docker container ls``` : Liste les conteneurs existants dans un dossier spécifique
+### 🔍 Gestion des conteneurs
+- `docker ps` ou `docker container ls` : Liste les conteneurs existants
+- `docker run <image>` : Exécute une image existante
+- `docker stop <conteneur>` : Stoppe un conteneur
+- `docker rm <conteneur>` : Supprime un conteneur  
+  👉 Supprimer plusieurs conteneurs :  
+  `docker rm <container1> <container2> <container3>`
 
-```docker run <image>``` : Exécute les images existantes
+### 📦 Gestion des images
+- `docker image ls` : Liste les images existantes
+- `docker image rm <id>` : Supprime une image via son ID
 
+### ⚡ Gestion via configuration (docker-compose)
+- `<configuration> up` : Lance un conteneur et installe les composants nécessaires
+- `<configuration> down` : Stoppe et supprime un conteneur
 
+## 🎛 Options utiles en terminal
+- `-a` : Sélectionne tous
+- `-d` : Détaché (background)
+- `-p` : Ports
+- `--name` : Définit le nom d'un conteneur
 
-
-```docker image ls``` : Liste les images existantes
-```docker image rm <id>``` : Supprime l'image via son id
-
-
-```docker stop <conteneur>``` : Stoppe le conteneur mentionné
-
-```docker rm <conteneur>``` : Supprime le conteneur mentionné 
-Il est possible de supprimer plusieurs containeur en faisant ceci ```docker rm <container> <container> <container>```
-
-```<configuration> up``` : Permet de lancer le conteneur en installant les composants nécessaire
-```<configuration> down``` : Permet de stopper le conteneur actuel
-
-Les différents choix possible en terminal : 
-
-```-a``` : Selectionne tous
-```-d``` : Détacher
-```-p``` : Ports
-```-name```: Selectionne le nom
-
-:warning: Docker fonctionne avec un serveur Linux.
+⚠️ Docker fonctionne avec un serveur **Linux**.
